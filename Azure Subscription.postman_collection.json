@@ -1,0 +1,72 @@
+{
+	"info": {
+		"_postman_id": "e53ed2d8-5989-42b8-8a98-715373b69186",
+		"name": "Azure Subscription",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14697979",
+		"_collection_link": "https://restless-desert-430083.postman.co/workspace/Azure-AI~c50e8173-ccb6-4351-ade4-93ceb59b61e3/collection/14697979-e53ed2d8-5989-42b8-8a98-715373b69186?action=share&source=collection_link&creator=14697979"
+	},
+	"item": [
+		{
+			"name": "List Subscriptions",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"strictSSL": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-ms-version",
+						"value": "2017-11-09",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://management.azure.com/subscriptions?api-version=2016-06-01",
+					"protocol": "https",
+					"host": [
+						"management",
+						"azure",
+						"com"
+					],
+					"path": [
+						"subscriptions"
+					],
+					"query": [
+						{
+							"key": "api-version",
+							"value": "2016-06-01"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{bearerToken}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+	],
+	"variable": [
+	]
+}
