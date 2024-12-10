@@ -25,3 +25,6 @@ stages:
           clean: all
         steps:
           - checkout: postman
+
+          - script: newman --version
+            displayName: Show newman version
