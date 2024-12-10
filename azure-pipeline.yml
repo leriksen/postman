@@ -1,7 +1,7 @@
 parameters:
   - name: ref
     type: string
-    default: main
+    default: refs/heads/main
 
 trigger: none
 
