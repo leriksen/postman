@@ -1,7 +1,7 @@
 parameters:
   - name: ref
     type: string
-    default: refs/heads/main
+    default: main
 
 trigger: none
 
@@ -12,7 +12,7 @@ resources:
     - repository: postman
       type: github
       name: leriksen/postman
-      ref: $(ref)
+      ref: ${{ parameters.ref }}
       endpoint: github.com_leriksen
 
 stages:
