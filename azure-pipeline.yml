@@ -1,0 +1,24 @@
+parameters:
+  - name: ref
+    type: string
+    default: main
+
+trigger: none
+
+repositories:
+  - repository: postman
+    type: github
+    name: leriksen/postman
+    ref: $(ref)
+    endpoint: github.com_leriksen
+
+stages:
+  - stage: newman
+    displayName: Run Newman
+    jobs:
+      - job: newman
+        displayName: Run Newman
+        workspace:
+          clean: all
+        steps:
+          - checkout: postman
