@@ -9,18 +9,6 @@
 	"item": [
 		{
 			"name": "List Subscriptions",
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"exec": [
-							""
-						],
-						"type": "text/javascript",
-						"packages": {}
-					}
-				}
-			],
 			"protocolProfileBehavior": {
 				"strictSSL": true
 			},
