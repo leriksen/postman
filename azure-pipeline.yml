@@ -5,6 +5,8 @@ parameters:
 
 trigger: none
 
+pool: ipam-devops
+
 repositories:
   - repository: postman
     type: github
