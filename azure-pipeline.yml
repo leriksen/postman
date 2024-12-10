@@ -7,12 +7,13 @@ trigger: none
 
 pool: ipam-devops
 
-repositories:
-  - repository: postman
-    type: github
-    name: leriksen/postman
-    ref: $(ref)
-    endpoint: github.com_leriksen
+resources:
+  repositories:
+    - repository: postman
+      type: github
+      name: leriksen/postman
+      ref: $(ref)
+      endpoint: github.com_leriksen
 
 stages:
   - stage: newman
