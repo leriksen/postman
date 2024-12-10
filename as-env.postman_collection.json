@@ -9,6 +9,30 @@
 	"item": [
 		{
 			"name": "List Subscriptions",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", () => {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"has one entry\", () => {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.value).to.have.lengthOf(1)",
+							"})",
+							"",
+							"pm.test(\"is the testing sub\", () => {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.value[0].displayName).to.eql(\"testing\");",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
 			"request": {
 				"auth": {
 					"type": "bearer",
