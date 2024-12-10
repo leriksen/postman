@@ -28,3 +28,18 @@ stages:
 
           - script: newman --version
             displayName: Show newman version
+
+          - task: AzureCLI@2
+            displayName: Run newman
+            inputs:
+              azureSubscription: default
+              scriptType: bash
+              scriptLocation: inlineScript
+              inlineScript: |
+                newman run as-env.postman_collection.json -e default.postman_environment.json -r 'cli,junitfull' --reporter-junitfull-export junit.xml --verbose
+
+          - task: PublishTestResults@2
+            displayName: Publish JUnit results
+            inputs:
+              testResultsFormat: JUnit
+              testResultsFiles: junit.xml
